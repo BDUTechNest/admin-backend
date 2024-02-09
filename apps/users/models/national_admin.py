@@ -10,7 +10,7 @@ national_authority_permissions = Q(codename__endswith="authority")
 
 class NationalAdminManager(UserManager):
     def get_queryset(self) -> QuerySet:
-        return super().get_queryset().filter(role=Role.DIVISIONALADMIN)
+        return super().get_queryset().filter(role=Role.NATIONALADMIN)
 
     def create_user(self, email, password=None, **extra_fields):
         group, created = Group.objects.get_or_create(name="national_admin")
@@ -23,7 +23,7 @@ class NationalAdminManager(UserManager):
 
 
 class NationalAdmin(User):
-    base_role = Role.DIVISIONALADMIN
+    base_role = Role.NATIONALADMIN
     objects = NationalAdminManager()
 
     class Meta:

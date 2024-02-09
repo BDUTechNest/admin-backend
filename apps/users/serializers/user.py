@@ -6,7 +6,11 @@ from apps.users.models.user import User
 
 
 class CreateUserMixin:
-    model = None
+
+    def get_model(self):
+        raise NotImplementedError(
+            "SaltedPasswordModel.check_password() " "must be implemented in a subclass"
+        )
 
     def create(self, validated_data):
         try:
@@ -16,8 +20,9 @@ class CreateUserMixin:
         return user
 
     def perform_create(self, validated_data):
+        user_model = self.get_model()
         with transaction.atomic():
-            user = self.model.objects.create_user(
+            user = user_model.objects.create_user(
                 email=validated_data.get("email"),
                 password=validated_data.get("password"),
                 phone=validated_data.get("phone"),

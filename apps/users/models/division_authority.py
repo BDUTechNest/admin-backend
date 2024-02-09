@@ -12,11 +12,11 @@ class DivisionalAuthorityManager(UserManager):
         )
 
     def get_queryset(self) -> QuerySet:
-        return super().get_queryset().filter(role=Role.NATIONALAUTHORITY)
+        return super().get_queryset().filter(role=Role.DIVISIONALAUTHORITY)
 
 
 class DivisionalAuthority(User):
-    base_role = Role.NATIONALAUTHORITY
+    base_role = Role.DIVISIONALAUTHORITY
     objects = DivisionalAuthorityManager()
 
     class Meta:
