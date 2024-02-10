@@ -5,7 +5,7 @@ from django.contrib.auth.models import PermissionsMixin, Group
 from django.db import models
 from django.utils import timezone
 from apps.users.manager import UserManager
-from .password import SaltedPasswordModel
+from apps.users.models.password import SaltedPasswordModel
 
 
 class Role(models.TextChoices):
