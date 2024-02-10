@@ -8,15 +8,19 @@ class DivisionalAuthorityManager(UserManager):
     def create_user(self, email, password=None, **extra_fields):
         group, created = Group.objects.get_or_create(name="divisional_authority")
         return super().create_user(
-            email, password, role=Role.DIVISIONALAUTHORITY, groups=group, **extra_fields
+            email,
+            password,
+            role=Role.DIVISIONAL_AUTHORITY,
+            groups=group,
+            **extra_fields
         )
 
     def get_queryset(self) -> QuerySet:
-        return super().get_queryset().filter(role=Role.DIVISIONALAUTHORITY)
+        return super().get_queryset().filter(role=Role.DIVISIONAL_AUTHORITY)
 
 
 class DivisionalAuthority(User):
-    base_role = Role.DIVISIONALAUTHORITY
+    base_role = Role.DIVISIONAL_AUTHORITY
     objects = DivisionalAuthorityManager()
 
     class Meta:
