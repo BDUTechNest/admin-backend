@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from apps.users.models.national_admin import NationalAdmin
-from .user import CreateUserMixin
+from apps.users.models.user import CreateUserMixin
 
 
 class CreateNationalAdminMixin(CreateUserMixin):

@@ -1,8 +1,6 @@
-from .user import User
-from .password import SaltedPasswordModel
-
-from .national_admin import NationalAdmin
-from .national_authority import NationalAuthority
-
-from .division_admin import DivisionalAdmin
-from .division_authority import DivisionalAuthority
+from apps.users.models.user import User
+from apps.users.models.password import SaltedPasswordModel
+from apps.users.models.national_admin import NationalAdmin
+from apps.users.models.national_authority import NationalAuthority
+from apps.users.models.division_admin import DivisionalAdmin
+from apps.users.models.division_authority import DivisionalAuthority

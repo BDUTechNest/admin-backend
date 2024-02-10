@@ -1,6 +1,6 @@
 from django.db.models.query import QuerySet
 from apps.users.manager import UserManager
-from .user import User, Role
+from apps.users.models.user import User, Role
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import Group, Permission
 

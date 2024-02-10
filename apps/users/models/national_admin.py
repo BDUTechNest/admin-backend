@@ -1,6 +1,6 @@
 from django.db.models.query import QuerySet
 from apps.users.manager import UserManager
-from .user import User, Role
+from apps.users.models.user import User, Role
 from django.contrib.auth.models import Group, Permission
 from django.db.models import Q
 

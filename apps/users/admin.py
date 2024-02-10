@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models.user import User
-from .models.division_admin import DivisionalAdmin
-from .models.division_authority import DivisionalAuthority
-from .models.national_admin import NationalAdmin
-from .models.national_authority import NationalAuthority
+from apps.users.models.user import User
+from apps.users.models.division_admin import DivisionalAdmin
+from apps.users.models.division_authority import DivisionalAuthority
+from apps.users.models.national_admin import NationalAdmin
+from apps.users.models.national_authority import NationalAuthority
 from django.contrib.admin import ModelAdmin
 
 
