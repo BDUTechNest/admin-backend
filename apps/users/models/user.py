@@ -5,14 +5,14 @@ from django.contrib.auth.models import PermissionsMixin, Group
 from django.db import models
 from django.utils import timezone
 from apps.users.manager import UserManager
-from .password import SaltedPasswordModel
+from apps.users.models.password import SaltedPasswordModel
 
 
 class Role(models.TextChoices):
-    NATIONALAUTHORITY = "NATIONALAUTHORITY", "National Authority"
-    NATIONALADMIN = "NATIONALADMIN", "National Admin"
-    DIVISIONALAUTHORITY = "DIVISIONALAUTHORITY", "Divisional Authority"
-    DIVISIONALADMIN = "DIVISIONALADMIN", "Divisional Admin"
+    NATIONAL_AUTHORITY = "NATIONAL_AUTHORITY", "National Authority"
+    NATIONAL_ADMIN = "NATIONALADMIN", "National Admin"
+    DIVISIONAL_AUTHORITY = "DIVISIONALAUTHORITY", "Divisional Authority"
+    DIVISIONAL_ADMIN = "DIVISIONALADMIN", "Divisional Admin"
     OTHER = "OTHER", "Other"
     ADMIN = "ADMIN", "Admin"
     TEACHER = "TEACHER", "Teacher"

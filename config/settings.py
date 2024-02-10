@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "drf_spectacular",
     "apps.users",
 ]
 
@@ -130,7 +131,8 @@ AUTH_USER_MODEL = "users.User"
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+    ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 SIMPLE_JWT = {
@@ -147,3 +149,12 @@ EMAIL_HOST_USER = "support@ums.bdu.ac.bd"
 EMAIL_PORT = 2525
 
 # AUTHENTICATION_BACKENDS = ["apps.users.backends.CustomBackend"]
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "User management system",
+    "DESCRIPTION": "User management system built by BDU",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
+}

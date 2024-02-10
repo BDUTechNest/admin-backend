@@ -1,4 +1,11 @@
 from django.db.models import Q
+from rest_framework.permissions import DjangoModelPermissions
+
+
+class CustomDjangoModelPermissions(DjangoModelPermissions):
+    def __init__(self) -> None:
+        self.perms_map["GET"] = ["%(app_label)s.view_%(model_name)s"]
+
 
 system_query = Q(content_type_id__in=[1, 2, 3, 4, 5, 6])
 admin_query = Q(codename__endswith="admin")
